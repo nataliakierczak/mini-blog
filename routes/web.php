@@ -18,5 +18,12 @@ Route::get('/', function(){
     return redirect(action('PostController@index'));
 });
 
-Route::resource('/posts', 'PostController');
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/show', 'PostController@show');
+Route::get('/posts/create', 'PostController@create')->middleware('auth');
+Route::post('/posts/store', 'PostController@store')->middleware('auth');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
