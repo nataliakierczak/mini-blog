@@ -12,7 +12,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ action('PostController@index') }}">Home</a></li>
-                <li><a href="{{ action('PostController@create') }}">All posts</a></li>
+                <li><a href="{{ action('PostController@create') }}">Create new post</a></li>
 
             </ul>
         </div><!--/.navbar-collapse -->

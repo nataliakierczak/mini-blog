@@ -1,3 +1,8 @@
 body {
-    background-color: orange;
+    background-color: #CCC3A;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+.homepage-posts {
+    border: solid grey 1px;
+    margin-bottom:1em;
 }

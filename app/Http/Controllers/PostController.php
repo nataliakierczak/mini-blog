@@ -38,9 +38,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        //$img=$request->img;
         $title=$request->title;
         $content=$request->content;
         $post=new Post();
+        //$post->img=1;
         $post->title=$title;
         $post->content=$content;
         $post->user_id=1;
@@ -48,10 +50,11 @@ class PostController extends Controller
 
 
         // checking for file
-        $file = $request->file('featured-image');
+        /*$file = $request->file('featured-image');
         $ext = $file->getClientOriginalExtension();
         $newName = 'image-' . $post->id . '.' . $ext;
         $filePath = $file->storeAs('featured', $newName);
+        */
 
         return redirect(action('PostController@index'));
         //return redirect (action('thankyou'));

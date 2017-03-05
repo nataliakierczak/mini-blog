@@ -7,12 +7,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="">The blog</a>
+            <a class="navbar-brand" href="{{ action('PostController@index') }}">The blog</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Home</a></li>
-                <li><a href="">All posts</a></li>
+                <li><a href="{{ action('PostController@index') }}">Home</a></li>
+                <li><a href="{{ action('PostController@create') }}">Create new post</a></li>
 
             </ul>
         </div><!--/.navbar-collapse -->
