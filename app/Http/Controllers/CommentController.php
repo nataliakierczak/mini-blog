@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Comment;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view ('post/index', compact (['posts']));
+        $posts = Comment::all();
+        return view ('comment/index', compact (['comments']));
     }
 
     /**
@@ -27,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view ('post.create');
+        return view ('comment.create');
     }
 
     /**
@@ -38,32 +36,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $title=$request->title;
-        $content=$request->content;
-        $post=new Post();
-        $post->title=$title;
-        $post->content=$content;
-        $post->user_id=1;
-        $post->save();
+        $comment=$request->comment;
+        $comment=new Comment();
+        $comment->text=$text;
+        $comment->user_name='user name';
+        $comment->user_id=1;
+        $comment->save();
 
-        var_dump($_POST);
-
-
-        $source_path=$_FILES['uploaded_file']['tmp_name'];
-
-        $target_path =public_path("media/post/{$post->id}.jpg");
-
-        move_uploaded_file($source_path, $target_path);
-
-        // checking for file
-        /*$file = $request->file('featured-image');
-        $ext = $file->getClientOriginalExtension();
-        $newName = 'image-' . $post->id . '.' . $ext;
-        $filePath = $file->storeAs('featured', $newName);
-        */
-
-        return redirect(action('PostController@index'));
-        //return redirect (action('thankyou'));
     }
 
     /**
@@ -74,8 +53,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('post/show', compact(['post']));
+        //
     }
 
     /**

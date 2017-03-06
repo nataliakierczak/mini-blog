@@ -14,4 +14,9 @@
 <p>{{$post->content}}</p>
 </div>
 
-    @endsection
+@include('comment.create')
+
+@endsection
+
+
+

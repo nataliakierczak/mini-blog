@@ -24,6 +24,12 @@ Route::get('/posts/create', 'PostController@create')->middleware('auth');
 Route::post('/posts/store', 'PostController@store')->middleware('auth');
 
 
+
+Route::get('/comments', 'CommentController@index');
+Route::get('/comments/show/{id}', 'CommentController@show');
+Route::get('/comments/create', 'CommentController@create')->middleware('auth');
+Route::post('/comments/store', 'CommentController@store')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

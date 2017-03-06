@@ -4,7 +4,7 @@
 
 @section ('title', 'Our post')
 
-<form action="{{action('PostController@store')}}" method="post"  enctype="multipart/form-data" yclass="form-inline">
+<form action="{{action('PostController@store')}}" method="post"  enctype="multipart/form-data" class="form-inline">
     {{ csrf_field() }}
    <!-- <div class="col-10">
 Title of the blog post<input type="text" name="title"></div>
@@ -18,7 +18,7 @@ Title of the blog post<input type="text" name="title"></div>
         <label class="sr-only" for="inlineFormInput">Content</label>
         <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Content of my article" name="content">
 
-            <input type="file" name="featured-image">
+        <input type="file" name="uploaded_file">
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
